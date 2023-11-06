@@ -18,7 +18,7 @@ const Cart = () => {
       ))}
 
       <Link to="/cheout">
-        <Button variant="contained"> Finalizar Cmpra</Button>
+        <Button variant="contained"> Finalizar Compra</Button>
       </Link>
       <Button variant="contained" onClick={clearCart}>Vaciar carrito</Button>
     </div>

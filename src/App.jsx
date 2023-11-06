@@ -2,6 +2,7 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./components/Header/Footer";
+
 //Pages
 import HomePage from "./pages/HomePage";
 import BicicletasPage from "./pages/BicicletasPage";
@@ -26,10 +27,12 @@ import CartContextComponent from "./components/Header/CartContext";
 
 const App = () => {
   return (
+    <div className="fondo" >
+
     <Router>
       <CartContextComponent>
         
-      <div>
+      <div >
         <Header/> 
       </div>
 
@@ -56,6 +59,7 @@ const App = () => {
       </div>
       </CartContextComponent>
     </Router>
+    </div>
   );
 };
 

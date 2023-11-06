@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
-import img from "./logo-rocky-bikes.png";
+import img from "/src/imagenes/fondo.png";
 import CartWidget from "./CartWidget";
 
 const Header = ()=> {
@@ -17,8 +17,7 @@ const Header = ()=> {
         </div>
 
         <Container className="text-center">
-        <Navbar.Brand href="/"> <img src={img}  width="30%" height="30%" alt="Logo-Bike" /> </Navbar.Brand>
-
+        <Navbar.Brand href="/"> <img src={img}  width="25%" height="25%"  alt="Logo-Bike" /> </Navbar.Brand>
         </Container>
 
 

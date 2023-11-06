@@ -11,7 +11,7 @@ const CartWidget = () => {
   return (
     <div>
       <Link to="/carrito">
-        <Button variant= "danger">  <BsCart4/> <Badge  bg="danger" size='xl'>{cart.length}</Badge>
+        <Button variant= "danger">  <BsCart4/> <Badge  bg="danger" size='xxl'>{cart.length}</Badge>
     </Button>
       </Link>
     </div>
