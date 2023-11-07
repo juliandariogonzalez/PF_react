@@ -4,3 +4,13 @@
 
   .carousel-caption h3, .carousel-caption p {
     color: red; }
+
+    .carousel-item {
+      height: 65vh;
+      min-height: 300px;
+      background: no-repeat center center scroll;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
