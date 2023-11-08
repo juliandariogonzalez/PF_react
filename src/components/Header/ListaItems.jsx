@@ -1,7 +1,8 @@
 import './ListaItems.css';
-import { useParams, useState, useEffect } from 'react';
-import CardBikes from './CardBikes';
-import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+// import CardBikes from './CardBikes';
+// import { Link } from 'react-router-dom';
 import { getDocs, collection } from 'firebase/firestore';
 import { db } from '../../FireBaseConfig';
 
@@ -28,20 +29,25 @@ const ListaItems = () => {
 
 
 
+
   return (
-    <div className='Card-List'>
-    {items.map((item) =>{
-      return (
-        <div key={item.id}>
-          <Link to={`/detailitem/${item.id}`}>          
-          <CardBikes key={item.id} item={item}/>
-          </Link>
-        </div>
-          );
-    })}
+    <div>
+      <h1>Productos de la categoría: {categoryName}</h1>
+      <div className="card-container">
+        {items.map((category) => (
+          <div key={category.id} className="card">
+            <h2>{category.title}</h2>
+            <img />
+            <p>{category.description}</p>
+            <p>Precio: {category.price}</p>
+            {/* Aquí puedes agregar más detalles del producto si los tienes */}
+          </div>
+        ))}
+      </div>
     </div>
-    
   );
-}
+};
+
+
 
 export default ListaItems;
