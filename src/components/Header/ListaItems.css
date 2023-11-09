@@ -1,16 +1,27 @@
 *{
     margin: 0;
     padding: 0;
-}
-
-h1{
+  }
+  
+  h1{
     text-align: center;
-}
-
-.Card-List{
-    display: grid;
-    grid-template-columns: 1fr 1fr ;
+  }
+  .div-productos{
     align-items: center;
-    margin-left: 9%;    
+    gap: "30px";
+.card{
+    max-height: 50rem;
+    min-height: 25rem;
 }
+  }
+  .Card-List{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr  1fr;
+    align-items: center;
+    margin-top: 30px;
+    margin-left: 13%;
+    margin-right: 13%;
+    gap: 50px;
+        
+  }
 

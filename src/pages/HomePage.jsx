@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import { Link } from 'react-router-dom';
 import Carrusel from '../components/Header/Carrusel';
-
+import ListaItems from '../components/Header/ListaItems';
 
 
 const homePage = () => {
@@ -12,7 +12,9 @@ const homePage = () => {
       <div>
       <Carrusel/>
       </div>
-
+    <div>
+      <ListaItems/>
+    </div>
     </div>
     
   );

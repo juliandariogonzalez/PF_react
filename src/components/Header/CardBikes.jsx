@@ -24,19 +24,22 @@
 //     }, [categoryName]);
 //     return (
 //         <div>
-//           <h1>Productos de la categoría: {categoryName}</h1>
-//           <div className="card-container">
-//             {item.map((category) => (
-//               <div key={category.id} className="card">
-//                 <h2>{category.title}</h2>
-//                 <p>{category.description}</p>
-//                 <p>Precio: {category.price}</p>
-//                 {/* Aquí puedes agregar más detalles del producto si los tienes */}
-//               </div>
-//             ))}
-//           </div>
+//         <h1>Todos los productos: {categoryName}</h1>
+//         <div className="card-container">
+//           {items.map((category) => (
+//             <Card key={category.id} className="card">
+//               <Card.Body>
+//                 <Card.Title>{category.title}</Card.Title>
+//                 <Card.Img src={category.image} alt={category.title} />
+//                 <Card.Text>{category.description}</Card.Text>
+//                 <Card.Text>Precio: {category.price}</Card.Text>
+//                 {/* Puedes agregar más detalles del producto aquí si los tienes */}
+//               </Card.Body>
+//             </Card>
+//           ))}
 //         </div>
-//       );
-// }
+//       </div>
+//     );
+//   }
 
 // export default CardBikes;

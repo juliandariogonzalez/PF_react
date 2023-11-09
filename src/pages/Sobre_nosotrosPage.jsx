@@ -1,7 +1,11 @@
+import img from "/src/imagenes/sobrenosotros.jpg";
+
 const sobre_nosotrosPage = () => {
   return (
-    <div>
+    <div style={{textAlign: "center"}}>
       <h1>Sobre nosotros</h1>
+      <img src={img} alt="sobrenosotros" />
+     
     </div>
   );
 };

@@ -3,9 +3,10 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 // import CardBikes from './CardBikes';
 // import { Link } from 'react-router-dom';
-import { getDocs, collection } from 'firebase/firestore';
+import { getDocs, collection, query, where } from 'firebase/firestore';
 import { db } from '../../FireBaseConfig';
-
+import {Card, Button} from "react-bootstrap"
+import { Link } from 'react-router-dom';
 
 
 
@@ -15,7 +16,7 @@ const ListaItems = () => {
   const {categoryName} =useParams();
   
   useEffect(() => {
-
+    if (!categoryName){
     let productsCollection = collection(db, "products")
     getDocs(productsCollection).then( (res)=> {
       let newArray = res.docs.map((product) => {
@@ -23,30 +24,42 @@ const ListaItems = () => {
         });
         setItems(newArray);
       });
-  }, [categoryName]);
+  } else{
+    let productsCollection = collection(db, "products");
 
-
-
-
-
+    let collectionFiltered = query(
+      productsCollection,
+      where("category", "==", categoryName)
+    );
+    getDocs(collectionFiltered).then((res) => {
+      let newArray =res.docs.map((product) => {
+        return {id: product.id, ...product.data() };
+      });
+      setItems(newArray);
+    });
+  } 
+}, [categoryName]);
 
   return (
-    <div>
-      <h1>Productos de la categoría: {categoryName}</h1>
-      <div className="card-container">
-        {items.map((category) => (
-          <div key={category.id} className="card">
-            <h2>{category.title}</h2>
-            <img />
-            <p>{category.description}</p>
-            <p>Precio: {category.price}</p>
-            {/* Aquí puedes agregar más detalles del producto si los tienes */}
-          </div>
-        ))}
+    <div className="div-productos">
+    <h1>Todos los productos: {categoryName}</h1>
+    <div className="Card-List">
+      {items.map((category) => (
+        <Card key={category.id} className="card" style={{ maxWidthidth: '18rem'  }}>
+          <Card.Body style={{ textAlign: 'center' }}>
+            <Card.Img variant="top" src={category.img} alt={category.title} height={"170rem"}/>
+            <Card.Title style={{ maxHeight: '3rem', overflow: 'hidden', textOverflow: 'ellipsis' }}>{category.title}</Card.Title>
+            <Card.Text style={{ maxHeight: '3rem', overflow: 'hidden', textOverflow: 'ellipsis' }}>{category.description}</Card.Text>
+            <Card.Text style={{ maxHeight: '3rem', overflow: 'hidden', textOverflow: 'ellipsis' }}>Precio: {category.price}</Card.Text>
+            <Link to="/detailitem"> <Button className="btn-product" variant="danger">Ver Producto</Button></Link>
+
+          </Card.Body>
+        </Card>
+      ))}
       </div>
-    </div>
-  );
-};
+  </div>
+);
+}
 
 
 
