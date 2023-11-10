@@ -1,10 +1,13 @@
-
+import CardAccesorios from "../components/Header/CardAccesorios";
 
 const AccesoriosPage = () => {
   return (
-    <div>AccesoriosPage
-    </div>
-  )
-}
+    <div>
+      <h1 className="text-center">Accesorios</h1>
 
-export default AccesoriosPage
+      <CardAccesorios />
+    </div>
+  );
+};
+
+export default AccesoriosPage;

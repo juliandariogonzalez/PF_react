@@ -1,19 +1,19 @@
-import { useState, useEffect } from 'react';
-import { getDocs, collection, query, where } from 'firebase/firestore';
-import { db } from '../../FireBaseConfig';
-import {Card, Button} from "react-bootstrap"
-import { Link } from 'react-router-dom';
+import { collection, query, where, getDocs } from "firebase/firestore";
+import { db } from "../../FireBaseConfig";
+import { useEffect, useState } from "react";
+import { Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 
 
-const CardBikes = () => {
+const CardComponentes = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
       const getProducts = async () => {
         const q = query(
           collection(db, "products"),
-          where("category", "==", "Bicicletas")
+          where("category", "==", "Componentes")
         );
         const docs = [];
         const querySnapshot = await getDocs(q);
@@ -49,6 +49,5 @@ const CardBikes = () => {
   );
   };
   
- 
 
-export default CardBikes
+export default CardComponentes

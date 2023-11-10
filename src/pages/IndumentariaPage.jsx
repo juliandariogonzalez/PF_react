@@ -1,8 +1,12 @@
-
+import Cardindumentaria from "/src/components/Header/CardIndumentaria.jsx";
 const IndumentariaPage = () => {
   return (
-    <div>IndumentariaPage</div>
-  )
-}
+    <div>
+      <h1 className="text-center">Indumentaria</h1>
 
-export default IndumentariaPage
+      <Cardindumentaria />
+    </div>
+  );
+};
+
+export default IndumentariaPage;

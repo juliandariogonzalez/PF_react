@@ -4,16 +4,14 @@ import { db } from '../../FireBaseConfig';
 import {Card, Button} from "react-bootstrap"
 import { Link } from 'react-router-dom';
 
-
-
-const CardBikes = () => {
+const CardAccesorios = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
       const getProducts = async () => {
         const q = query(
           collection(db, "products"),
-          where("category", "==", "Bicicletas")
+          where("category", "==", "Accesorios")
         );
         const docs = [];
         const querySnapshot = await getDocs(q);
@@ -49,6 +47,5 @@ const CardBikes = () => {
   );
   };
   
- 
 
-export default CardBikes
+export default CardAccesorios
