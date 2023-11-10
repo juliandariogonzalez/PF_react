@@ -19,10 +19,10 @@ const ListaItems = () => {
     if (!categoryName){
     let productsCollection = collection(db, "products")
     getDocs(productsCollection).then( (res)=> {
-      let newArray = res.docs.map((product) => {
+      let newElements = res.docs.map((product) => {
           return {id: product.id, ...product.data()};  
         });
-        setItems(newArray);
+        setItems(newElements);
       });
   } else{
     let productsCollection = collection(db, "products");
@@ -32,10 +32,10 @@ const ListaItems = () => {
       where("category", "==", categoryName)
     );
     getDocs(collectionFiltered).then((res) => {
-      let newArray =res.docs.map((product) => {
+      let newElements =res.docs.map((product) => {
         return {id: product.id, ...product.data() };
       });
-      setItems(newArray);
+      setItems(newElements);
     });
   } 
 }, [categoryName]);
@@ -51,7 +51,10 @@ const ListaItems = () => {
             <Card.Title style={{ maxHeight: '3rem', overflow: 'hidden', textOverflow: 'ellipsis' }}>{category.title}</Card.Title>
             <Card.Text style={{ maxHeight: '3rem', overflow: 'hidden', textOverflow: 'ellipsis' }}>{category.description}</Card.Text>
             <Card.Text style={{ maxHeight: '3rem', overflow: 'hidden', textOverflow: 'ellipsis' }}>Precio: {category.price}</Card.Text>
-            <Link to="/detailitem"> <Button className="btn-product" variant="danger">Ver Producto</Button></Link>
+            <div className='mt-auto' >
+
+            <Link to="/detailitem"> <Button  variant="danger">Ver Producto</Button></Link>
+            </div>
 
           </Card.Body>
         </Card>

@@ -1,45 +1,34 @@
-// import { Card, Button } from 'react-bootstrap';
-// import './ListaItems.css';
+// import { useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+// import CardBikes from './CardBikes';
 // import { Link } from 'react-router-dom';
-// import "./CardBikes.css"
+import { getDocs, collection, query, where } from 'firebase/firestore';
+import { db } from '../../FireBaseConfig';
+// import {Card, Button} from "react-bootstrap"
+// import { Link } from 'react-router-dom';
 
-// import { img } from '../../FireBaseConfig';
 
 
-
-// const CardBikes = () => {
-//     const [ items, setItems] = useState([]);
-  
-//     const {categoryName} =useParams();
+const CardBikes = () => {
+    const [ Bicicletas, setBicicletas] = useState([]);
     
-//     useEffect(() => {
-  
-//       let productsCollection = collection(db, "products")
-//       getDocs(productsCollection).then( (res)=> {
-//         let newArray = res.docs.map((product) => {
-//             return {id: product.id, ...product.data()};  
-//           });
-//           setItems(newArray);
-//         });
-//     }, [categoryName]);
-//     return (
-//         <div>
-//         <h1>Todos los productos: {categoryName}</h1>
-//         <div className="card-container">
-//           {items.map((category) => (
-//             <Card key={category.id} className="card">
-//               <Card.Body>
-//                 <Card.Title>{category.title}</Card.Title>
-//                 <Card.Img src={category.image} alt={category.title} />
-//                 <Card.Text>{category.description}</Card.Text>
-//                 <Card.Text>Precio: {category.price}</Card.Text>
-//                 {/* Puedes agregar más detalles del producto aquí si los tienes */}
-//               </Card.Body>
-//             </Card>
-//           ))}
-//         </div>
-//       </div>
-//     );
-//   }
+    useEffect(() =>{
+        const getBicicletas = async() => {
+            const q = query(collection(db, "products"), where("category", "==", Bicicletas))
+            const docs =[];
+            const querySnapshot= await getDocs(q);
+            querySnapshot.forEach((doc)=> {
+                docs.push({...doc.data(), id: doc.id});
+                console.log(doc.id, " =>", doc.data())
 
-// export default CardBikes;
+            })
+            setBicicletas(docs);
+        };
+        getBicicletas();
+
+   },[Bicicletas] );
+}
+ 
+
+
+export default CardBikes

@@ -1,7 +1,9 @@
 
+
 const AccesoriosPage = () => {
   return (
-    <div>AccesoriosPage</div>
+    <div>AccesoriosPage
+    </div>
   )
 }
 

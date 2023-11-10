@@ -1,5 +1,5 @@
 import Badge from 'react-bootstrap/Badge';
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
@@ -11,8 +11,8 @@ const CartWidget = () => {
   return (
     <div>
       <Link to="/carrito">
-        <Button variant= "danger">  <BsCart4/> <Badge  bg="danger" size='xxl'>{cart.length}</Badge>
-    </Button>
+        <BsCart4  style={{ fontSize: '30px', color: 'red', marginRight: '5px' }}/> <Badge  bg="danger" variant="outline-danger m-3" >{cart.length}</Badge>
+   
       </Link>
     </div>
   )

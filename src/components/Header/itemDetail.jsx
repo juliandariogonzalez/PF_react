@@ -1,32 +1,50 @@
-import { useContext, useState } from "react";
-import { db } from "../../FireBaseConfig";
-import { getDoc, collection, doc } from "firebase/firestore";
-import { useParams } from "react-router-dom";
-import { CartContext } from "./CartContext";
+import { Link } from "react-router-dom";
+import CounterContainer from "/CounterContainer";
+import "./ItemDetail.css";
 
-const itemDetail = () => {
-    const [productSelected, setProductSelected] = useState({});
-    const [showCounter, setShowCounter] = useState(true);
 
-    const {id} = useParams();
-    
-    const {addToCart, getQuantityById} =useContext(CartContext);
-
-    let TotalQuantity = getQuantityById(+id);
-    
-    useEffect(()=> {
-        let itemCollection = collection(db, "products")
-
-        let refDoc = doc(itemCollection, id)
-        getDoc(refDoc).then((res)=>{
-            setProductSelected( {id: res.id, ...res.data()})
-        })
-      
-    }, [id]);
-
+export const ItemDetail = ({ productSelected, onAdd, initial, showCounter }) => {
   return (
-    <div></div>
-  )
-}
-}
-export default itemDetail
+    <div>
+      <div className={"containerItemDetail"}>
+        <div className={"containerImage"}>
+          <img src={productSelected.img} alt="" />
+        </div>
+
+        <div className={"containerDetail"}>
+          <h2 style={{ fontFamily: "monospace" }}>
+            <span style={{ fontSize: "23px" }}>Nombre:</span>{" "}
+            {productSelected.title}
+          </h2>
+          <h2 style={{ fontFamily: "monospace" }}>
+            <span style={{ fontSize: "23px" }}>Descripcion:</span>{" "}
+            {productSelected.description}
+          </h2>
+          <h2 style={{ fontFamily: "monospace" }}>
+            <span style={{ fontSize: "23px" }}>Precio:</span> $
+            {productSelected.price}.-
+          </h2>
+        </div>
+      </div>
+
+      {
+        initial && <h4>Ya tienes {initial} unidades</h4>
+      }
+       
+
+      {
+         showCounter ?  <div style={{ display: "flex", justifyContent: "center" }}>
+          <CounterContainer
+            stock={productSelected.stock}
+            onAdd={onAdd}
+            initial={initial}
+          />
+        </div> :  <Link to="/cart">Finalizar compra</Link>
+      }
+
+     
+
+     
+    </div>
+  );
+};

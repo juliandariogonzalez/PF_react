@@ -1,12 +1,11 @@
-import ListaItems from "../components/Header/ListaItems";
-
+import CardBikes from "../components/Header/CardBikes";
 
 const bicicletasPage = () => {
   return (
     <div>
       <h1>Bicicletas</h1>
       <div>
-      <ListaItems />
+      <CardBikes></CardBikes>
       </div>
     </div>
   )
