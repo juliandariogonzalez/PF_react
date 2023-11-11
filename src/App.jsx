@@ -11,7 +11,7 @@ import AccesoriosPage from "./pages/AccesoriosPage";
 import ComponentesPage from "./pages/ComponentesPage";
 import Sobre_nosotrosPage from "./pages/Sobre_nosotrosPage";
 import CartPage from "./pages/CartPage";
-
+import DetailPage from "./pages/DetailPage.jsx"
 //React router DOM
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import DetailItemPage from "./components/Header/DetailItemPage";
@@ -44,7 +44,10 @@ const App = () => {
           <Route path="/accesorios" element={<AccesoriosPage />} />
           <Route path="/componentes" element={<ComponentesPage />} />
           <Route path="/sobre_nosotros" element={<Sobre_nosotrosPage />} />
+          <Route path="/detail/:id" element={<DetailPage />} />
           <Route path="/carrito" element={<CartPage />} />
+
+
 
           {/* ruta para ver detalle de los items */}
           <Route path="/detailitem/:id" element={<DetailItemPage />} />

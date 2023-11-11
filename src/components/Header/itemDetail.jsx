@@ -22,7 +22,7 @@ export const ItemDetail = ({ productSelected, onAdd, initial, showCounter }) => 
           </h2>
           <h2 style={{ fontFamily: "monospace" }}>
             <span style={{ fontSize: "23px" }}>Precio:</span> $
-            {productSelected.price}.-
+            {productSelected.price}
           </h2>
         </div>
       </div>
