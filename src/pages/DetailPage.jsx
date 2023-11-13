@@ -1,6 +1,5 @@
 import CardItemDetail from "../components/Header/CardItemDetail"
 
-
 const DetailPage = () => {
   return (
     <div>

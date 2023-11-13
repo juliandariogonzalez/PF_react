@@ -10,7 +10,7 @@ const CartWidget = () => {
     const { cart }= useContext(CartContext)
   return (
     <div>
-      <Link to="/carrito">
+      <Link to="/cart">
         <BsCart4  style={{ fontSize: '30px', color: 'red', marginRight: '5px' }}/> <Badge  bg="danger" variant="outline-danger m-3" >{cart.length}</Badge>
    
       </Link>

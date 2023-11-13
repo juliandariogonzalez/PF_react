@@ -14,7 +14,6 @@ import CartPage from "./pages/CartPage";
 import DetailPage from "./pages/DetailPage.jsx"
 //React router DOM
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import DetailItemPage from "./components/Header/DetailItemPage";
 
 //Context
 import CartContextComponent from "./components/Header/CartContext";
@@ -45,14 +44,11 @@ const App = () => {
           <Route path="/componentes" element={<ComponentesPage />} />
           <Route path="/sobre_nosotros" element={<Sobre_nosotrosPage />} />
           <Route path="/detail/:id" element={<DetailPage />} />
-          <Route path="/carrito" element={<CartPage />} />
+          <Route path="/cart" element={<CartPage />} />
 
 
 
-          {/* ruta para ver detalle de los items */}
-          <Route path="/detailitem/:id" element={<DetailItemPage />} />
-          <Route path="/detailitem/" element={<DetailItemPage />} />
-
+  
 
 
         </Routes>

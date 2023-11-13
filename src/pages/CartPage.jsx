@@ -1,32 +1,30 @@
-import { Button } from "react-bootstrap";
+// import { Button } from "react-bootstrap";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { CartContext } from "../components/Header/CartContext";
+// import Swal from "sweetalert2";
 
 
 
 const Cart = () => {
-
-  const { cart } = useContext(CartContext)
-
+  const { cart, getQuantityById, getTotalPrice, deleteProductById } = useContext(CartContext);
 
 
-  return (
-    <div>
-      <h1>Carrito</h1>
-
-    {cart.map ((product) => (
-      <div key= { product.id}>
-        <h4> {product.tittle}</h4>
-        <h4> Cantidad: {product.quatity} </h4>
-      </div>
-    ))}
-
-      <Link to="/cheout">
-        <Button variant="contained"> Finalizar Compra</Button>
-      </Link>
+  <div>
+  <h1>Carrito de Compras</h1>
+  {cart.map((product) => (
+    <div key={product.id}>
+      <h3>{product.title}</h3>
+      <p>Cantidad: {getQuantityById(product.id)}</p>
+      <p>Precio unitario: ${product.price}</p>
+      <p>Total: ${product.price * getQuantityById(product.id)}</p>
+      <button onClick={() => deleteProductById(product.id)}>Eliminar del carrito</button>
     </div>
-  );
-};
+  ))}
+  <p>Total a Pagar: ${getTotalPrice()}</p>
+  <button onClick={() => clearCart()}>Vaciar Carrito</button>
+</div>
+
+}
 
 export default Cart;
