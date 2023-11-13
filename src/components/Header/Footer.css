@@ -13,6 +13,8 @@
   display: flex;
   justify-content: space-around;
   padding: 010;
+  box-shadow: 2px 1px 20px rgb(30, 29, 29);
+
 }
 
 .logo-instagram{

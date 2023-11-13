@@ -33,7 +33,7 @@ const CardAccesorios = () => {
               <Card.Img variant="top" src={category.img} alt={category.title} height={"170rem"}/>
               <Card.Title style={{ maxHeight: '3rem', overflow: 'hidden', textOverflow: 'ellipsis' }}>{category.title}</Card.Title>
               <Card.Text style={{ maxHeight: '3rem', overflow: 'hidden', textOverflow: 'ellipsis' }}>{category.description}</Card.Text>
-              <Card.Text style={{ maxHeight: '3rem', overflow: 'hidden', textOverflow: 'ellipsis' }}>Precio: {category.price}</Card.Text>
+              <Card.Text >Precio: ${category.price}</Card.Text>
               <div className='mt-auto' >
   
               <Link to={`/detail/${category.id}`} key={category.id}>

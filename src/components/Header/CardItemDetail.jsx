@@ -31,20 +31,20 @@ const CardItemDetail = () => {
   
     return (
       <div className="div-productos">
-      <div className="Card-List">
+      <div className="">
         {products.map((category) => (
-          <Card key={category.id} category={category} className="card" style={{  maxWidth: '18rem'  }}>
+          <Card key={category.id} category={category} className="card" style={{  maxWidth: '500px', height: "7500px" }}>
             <Card.Body style={{ textAlign: 'center' }}>
-              <Card.Img variant="top" src={category.img} alt={category.title}  height={"170rem"}/>
+              <Card.Img variant="top" src={category.img} alt={category.title} width={"50%"} height={"45%"}/>
               <Card.Title style={{ maxHeight: '3rem', overflow: 'hidden', textOverflow: 'ellipsis' }}>{category.title}</Card.Title>
               <Card.Text style={{ maxHeight: '3rem', overflow: 'hidden', textOverflow: 'ellipsis' }}>{category.description}</Card.Text>
-              <Card.Text style={{ maxHeight: '3rem', overflow: 'hidden', textOverflow: 'ellipsis' }}>Precio: {category.price}</Card.Text>
+              <Card.Text>Precio: ${category.price}</Card.Text>
               <div className='mt-auto' >
   
               <Link to={`/detail/${category.id}`} key={category.id}>
                 <Button  variant="danger">Agregar al carrito</Button><br />
-                <Button  variant="danger">Eliminar del carrito</Button><br />
                 <Button  variant="danger">Finalizar Compra</Button><br />
+                <Button  variant="danger">Eliminar del carrito</Button><br />
 
               </Link>
               </div>

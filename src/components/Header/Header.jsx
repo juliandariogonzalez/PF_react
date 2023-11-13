@@ -23,14 +23,14 @@ const Header = ()=> {
 
         <Nav expand="lg" className="mi-navbar">
           <Container>
-          <ul className='text-center'>
+          <ul className='text-center' >
 
-          <Button variant="outline-danger m-3" size='sm' >  <Nav.Link href="/bicicletas"> Bicicletas </Nav.Link> </Button>{' '}
-          <Button variant="outline-danger m-3" size='sm'>   <Nav.Link href="/indumentaria"> Indumentaria </Nav.Link> </Button>{' '}
-          <Button variant="outline-danger m-3" size='sm'>   <Nav.Link href="/accesorios"> Accesorios </Nav.Link> </Button>{' '}
-          <Button variant="outline-danger m-3" size='sm'>   <Nav.Link href="/componentes"> componentes </Nav.Link> </Button>{' '}
-          <Button variant="outline-danger m-3" size='sm'>   <Nav.Link href="/sobre_nosotros"> Sobre nosotros </Nav.Link> </Button>{' '}
-          <Button  variant=" m-5" size='xl'><CartWidget></CartWidget>            </Button>
+          <Button id="btn-nav" variant="outline-danger m-3" size='sm'>  <Nav.Link href="/bicicletas"> Bicicletas </Nav.Link> </Button>{' '}
+          <Button id="btn-nav" variant="outline-danger m-3" size='sm'>   <Nav.Link href="/indumentaria"> Indumentaria </Nav.Link> </Button>{' '}
+          <Button id="btn-nav" variant="outline-danger m-3" size='sm'>   <Nav.Link href="/accesorios"> Accesorios </Nav.Link> </Button>{' '}
+          <Button id="btn-nav" variant="outline-danger m-3" size='sm'>   <Nav.Link href="/componentes"> componentes </Nav.Link> </Button>{' '}
+          <Button id="btn-nav" variant="outline-danger m-3" size='sm'>   <Nav.Link href="/sobre_nosotros"> Sobre nosotros </Nav.Link> </Button>{' '}
+          <Button id="btn-nav"  variant=" m-5" size='xl'><CartWidget></CartWidget>            </Button>
           </ul>
           </Container>
 
