@@ -1,7 +1,11 @@
+import CardItemDetail from "../components/Header/CardItemDetail"
+
 
 const DetailPage = () => {
   return (
-    <div>DetailPage</div>
+    <div>
+      <CardItemDetail/>
+    </div>
   )
 }
 
