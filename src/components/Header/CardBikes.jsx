@@ -38,7 +38,8 @@ const CardBikes = () => {
               <Card.Text style={{ maxHeight: '3rem', overflow: 'hidden', textOverflow: 'ellipsis' }}>Precio: {category.price}</Card.Text>
               <div className='mt-auto' >
   
-              <Link to="/detail/:id"> <Button  variant="danger">Ver Producto</Button></Link>
+              <Link to={`/detail/${category.id}`} key={category.id}>
+              <Button  variant="danger">Ver Producto</Button></Link>
               </div>
   
             </Card.Body>
