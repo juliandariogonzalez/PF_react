@@ -3,12 +3,10 @@ import { Button } from "react-bootstrap";
 import { CartContext } from "./CartContext";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
-import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
 
 const Cart = () => {
-  const { cart, clearCart, deleteProductById, getTotalPrice } =
-  useContext(CartContext);
+  const { cart, clearCart, deleteProductById, getTotalPrice } = useContext(CartContext);
 
 let total = getTotalPrice();
 
@@ -33,16 +31,13 @@ return (
   <div>
     <h1>Estoy en el carrito</h1>
 
-    {cart.map((product) => (
-      <div key={product.id} style={{ border: "2px solid black" }}>
-        <h2>{product.title}</h2>
-        <h3>{product.price}</h3>
-        <h3>cantidad: {product.quantity}</h3>
-        {/* <Button onClick={() => deleteProductById(product.id)}>
-          Eliminar
-        </Button> */}
-        <Button onClick={()=>deleteProductById(product.id)}>
-          <DeleteForeverIcon color="primary"  />
+    {cart.map((category) => (
+      <div key={category.id}>
+        <h2>{category.title}</h2>
+        <h3>{category.price}</h3>
+        <h3>cantidad: {category.quantity}</h3>
+
+        <Button onClick={()=>deleteProductById(category.id)}>
         </Button>
       </div>
     ))}

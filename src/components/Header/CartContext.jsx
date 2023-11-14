@@ -2,8 +2,8 @@ import { createContext, useState } from "react";
 
 export const CartContext = createContext();
 
-const CartContextComponent = ({ children }) => {
-  const [cart, setCart] = useState( JSON.parse(localStorage.getItem("cart")) || [] ); // [todo lo que tenia, y ademas lo nuevo]
+export const CartContextComponent = ({ children }) => {
+  const [cart, setCart] = useState(  JSON.parse(localStorage.getItem("cart")) || [] ); 
   
   const addToCart = (product) => {
     let exist = isInCart(product.id);
@@ -47,7 +47,7 @@ const CartContextComponent = ({ children }) => {
   // poder borrar un elemento particular del carrito
 
   const deleteProductById = (id) => {
-    let newElement = cart.filter((product) => product.id !== id);
+    let newElement = cart.filter((elemento) => elemento.id !== id);
     setCart(newElement);
     localStorage.setItem("cart", JSON.stringify( newElement ) )
   };
@@ -80,8 +80,10 @@ const CartContextComponent = ({ children }) => {
     getTotalPrice,
     getTotalQuantity
   };
-
-  return <CartContext.Provider value={data}>{children}</CartContext.Provider>;
+  
+  
+  return (
+  <CartContext.Provider value={data}>{children}</CartContext.Provider>)
 };
 
 export default CartContextComponent;

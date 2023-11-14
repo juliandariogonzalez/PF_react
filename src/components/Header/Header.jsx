@@ -17,7 +17,7 @@ const Header = ()=> {
         </div>
 
         <Container className="text-center">
-        <Navbar.Brand href="/"> <img src={img}  width="25%" height="25%"  alt="Logo-Bike" /> </Navbar.Brand>
+        <Navbar.Brand href="/"> <img src={img} width="25%" height="25%"  alt="Logo-Bike" /> </Navbar.Brand>
         </Container>
 
 

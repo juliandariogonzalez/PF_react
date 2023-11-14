@@ -12,12 +12,12 @@ import ComponentesPage from "./pages/ComponentesPage";
 import Sobre_nosotrosPage from "./pages/Sobre_nosotrosPage";
 import CartPage from "./pages/CartPage";
 import DetailPage from "./pages/DetailPage.jsx"
-import CheckOutPage from "./pages/ChekOutPage.jsx";
+import CheckOutPage from "./pages/CheckOutPage.jsx";
 //React router DOM
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 //Context
-import CartContextComponent from "./components/Header/CartContext";
+import {CartContextComponent} from "./components/Header/CartContext";
 
 
 
@@ -46,12 +46,8 @@ const App = () => {
           <Route path="/sobre_nosotros" element={<Sobre_nosotrosPage />} />
           <Route path="/detail/:id" element={<DetailPage />} />
           <Route path="/cart" element={<CartPage />} />
-          <Route path="/chekout" element={CheckOutPage} ></Route>
-
-
-  
-
-
+          <Route path="/chekout" element={<CheckOutPage/>} ></Route>
+ 
         </Routes>
       </div>
       <div>

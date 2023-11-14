@@ -1,3 +1,4 @@
+import "./CardItemDetail.css"
 import  {useState, useEffect, useContext} from "react";
 import { useParams } from "react-router-dom";
 import { db } from "../../FireBaseConfig";
@@ -5,7 +6,6 @@ import { collection, query, getDocs, where, documentId } from "firebase/firestor
 import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
-import "./CardItemDetail.css"
 
 
 

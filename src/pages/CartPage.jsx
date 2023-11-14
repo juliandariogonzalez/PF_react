@@ -1,12 +1,11 @@
 // import { Button } from "react-bootstrap";
 import { useContext } from "react";
 // import { Link } from "react-router-dom";
-import { CartContext } from "../components/Header/CartContext";
-// import Swal from "sweetalert2";
+import  { CartContext } from "../components/Header/CartContext";
 
 
 
-const Cart = () => {
+const CartPage = () => {
   const { cart, getQuantityById, getTotalPrice, deleteProductById, clearCart } = useContext(CartContext);
 
 
@@ -27,4 +26,4 @@ const Cart = () => {
 
 }
 
-export default Cart;
+export default CartPage;
