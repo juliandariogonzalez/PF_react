@@ -49,8 +49,10 @@ const CardItemDetail = () => {
                 </Button>
                 <Button onClick={() => deleteProductById()}>Eliminar del carrito</Button>
                 <Button onClick={() => clearCart()}>Vaciar Carrito</Button>
+                <Link to="/checkout">
                 <Button variant="danger" onClick={() => addToCart(category)}>Finalizar Compra</Button>
                 <p>Total a Pagar: ${getTotalPrice()}</p>
+                </Link>
 
 
               </Link>

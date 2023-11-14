@@ -7,7 +7,7 @@ import { CartContext } from "../components/Header/CartContext";
 
 
 const Cart = () => {
-  const { cart, getQuantityById, getTotalPrice, deleteProductById } = useContext(CartContext);
+  const { cart, getQuantityById, getTotalPrice, deleteProductById, clearCart } = useContext(CartContext);
 
 
   <div>

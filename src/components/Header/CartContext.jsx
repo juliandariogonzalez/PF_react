@@ -8,7 +8,7 @@ const CartContextComponent = ({ children }) => {
   const addToCart = (product) => {
     let exist = isInCart(product.id);
     if (exist) {
-      let newArr = cart.map((elemento) => {
+      let newElement = cart.map((elemento) => {
         // []
         if (elemento.id === product.id) {
           return {
@@ -19,8 +19,8 @@ const CartContextComponent = ({ children }) => {
           return elemento;
         }
       });
-      setCart(newArr);
-      localStorage.setItem("cart", JSON.stringify(newArr) )
+      setCart(newElement);
+      localStorage.setItem("cart", JSON.stringify(newElement) )
     } else {
       setCart([...cart, product]);
       localStorage.setItem("cart", JSON.stringify([...cart, product]) )
@@ -47,9 +47,9 @@ const CartContextComponent = ({ children }) => {
   // poder borrar un elemento particular del carrito
 
   const deleteProductById = (id) => {
-    let newArr = cart.filter((product) => product.id !== id);
-    setCart(newArr);
-    localStorage.setItem("cart", JSON.stringify( newArr ) )
+    let newElement = cart.filter((product) => product.id !== id);
+    setCart(newElement);
+    localStorage.setItem("cart", JSON.stringify( newElement ) )
   };
 
   // obtener el total del carrito

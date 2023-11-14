@@ -1,5 +1,4 @@
 import { Button } from "react-bootstrap";
-import PropTypes from 'prop-types';
 
 const CounterPresentacional = ({ sumar, contador, restar, onAdd }) => {
   return (
@@ -22,12 +21,7 @@ const CounterPresentacional = ({ sumar, contador, restar, onAdd }) => {
   );
 };
 
-CounterPresentacional.propTypes = {
-  sumar: PropTypes.func.isRequired,
-  contador: PropTypes.number.isRequired,
-  restar: PropTypes.func.isRequired,
-  onAdd: PropTypes.func.isRequired,
-};
+
 
 
 export default CounterPresentacional;

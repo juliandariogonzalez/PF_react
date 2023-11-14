@@ -1,11 +1,11 @@
 import { useContext, useState } from "react";
-import { CartContext } from "/CartContext";
-import { db } from "../../../firebaseConfig";
+import { CartContext } from "./CartContext";
+import { db } from "../../firebaseConfig";
 import { collection, addDoc, updateDoc, doc } from "firebase/firestore";
 import { serverTimestamp } from "firebase/firestore";
 import { Link } from "react-router-dom";
 
-const CheckoutOficial = () => {
+const Checkout = () => {
   const [userData, setUserData] = useState({
     nombre: "",
     telefono: "",
@@ -79,4 +79,4 @@ const CheckoutOficial = () => {
   );
 };
 
-export default CheckoutOficial;
+export default Checkout;
