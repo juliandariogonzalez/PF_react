@@ -14,8 +14,14 @@ import { CartContext } from "./CartContext";
 
 const CardItemDetail = () => {
     const { addToCart, deleteProductById, clearCart, getTotalPrice } = useContext(CartContext);
+    
     const [products, setProducts] = useState([]);
+    
     const { id } = useParams();
+    
+    
+    
+    
     useEffect(() => {
       const getProducts = async () => {
         const q = query(
@@ -36,18 +42,18 @@ const CardItemDetail = () => {
       <div className="div-productos">
         <h1>Detalle: </h1>
       <div id="item" >             
-        {products.map((category) => (
-          <Card  key={category.id} category={category}  style={{ maxWidth: '800px', Width: '500px', minHeight: "700px" }}>
+        {products.map((product) => (
+          <Card  key={product.id} category={product}  style={{ maxWidth: '800px', Width: '500px', minHeight: "700px" }}>
             <Card.Body className="card-item" style={{ textAlign: 'center' }}>
-              <Card.Title >{category.title}
-              <Card.Img variant="top" src={category.img} alt={category.title} width={"50%"} height={"45%"}/></Card.Title>
-              <Card.Text style={{ fontSize:"30px"}}> Precio: ${category.price} </Card.Text>
-              <Card.Text style={{color:"red", fontSize:"20px"}}>Descripcion: <br /> {category.description}</Card.Text>
+              <Card.Title >{product.title}
+              <Card.Img variant="top" src={product.img} alt={product.title} width={"50%"} height={"45%"}/></Card.Title>
+              <Card.Text style={{ fontSize:"30px"}}> Precio: ${product.price} </Card.Text>
+              <Card.Text style={{color:"red", fontSize:"20px"}}>Descripcion: <br /> {product.description}</Card.Text>
               
               <div className='mt-auto2' >
              
-              <Link to={`/detail/${category.id}`} key={category.id}>
-                <Button style={{margin:"10px", justifyContenter:"center"}} variant="danger" onClick={() => addToCart(category)}>
+              <Link to={`/detail/${product.id}`} key={product.id}>
+                <Button style={{margin:"10px", justifyContenter:"center"}} variant="danger" onClick={() => addToCart(product)}>
                   Agregar al carrito
                 </Button>
                 
@@ -57,7 +63,7 @@ const CardItemDetail = () => {
               </Link>
                 
                 <Link to="/checkout">
-                <Button style={{margin:"10px", justifyContenter:"center"}} variant="danger" onClick={() => addToCart(category)}>Finalizar Compra</Button>
+                <Button style={{margin:"10px", justifyContenter:"center"}} variant="danger" onClick={() => addToCart(product)}>Finalizar Compra</Button>
                 </Link>
                <div className="total">
                 <p style={{marginTop:"20px", fontSize:"20px", justifyContent:"center"}}>Total a Pagar: ${getTotalPrice()}</p>

@@ -31,13 +31,13 @@ return (
   <div>
     <h1>Estoy en el carrito</h1>
 
-    {cart.map((category) => (
-      <div key={category.id}>
-        <h2>{category.title}</h2>
-        <h3>{category.price}</h3>
-        <h3>cantidad: {category.quantity}</h3>
+    {cart.map((product) => (
+      <div key={product.id}>
+        <h2>{product.title}</h2>
+        <h3>{product.price}</h3>
+        <h3>cantidad: {product.quantity}</h3>
 
-        <Button onClick={()=>deleteProductById(category.id)}>
+        <Button onClick={()=>deleteProductById(product.id)}>
         </Button>
       </div>
     ))}

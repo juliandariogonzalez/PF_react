@@ -9,7 +9,6 @@ export const CartContextComponent = ({ children }) => {
     let exist = isInCart(product.id);
     if (exist) {
       let newElement = cart.map((elemento) => {
-        // []
         if (elemento.id === product.id) {
           return {
             ...elemento,
